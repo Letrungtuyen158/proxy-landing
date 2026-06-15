@@ -26,8 +26,9 @@ export const authConfig = {
       const isDashboard = nextUrl.pathname.startsWith("/dashboard");
       const isCheckout = nextUrl.pathname.startsWith("/checkout");
       const isAdmin = nextUrl.pathname.startsWith("/admin");
+      const isBill = nextUrl.pathname.startsWith("/bill");
 
-      if ((isDashboard || isCheckout || isAdmin) && !isLoggedIn) {
+      if ((isDashboard || isCheckout || isAdmin || isBill) && !isLoggedIn) {
         return false;
       }
 

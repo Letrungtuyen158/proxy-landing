@@ -8,7 +8,7 @@ export default async function CheckoutPage({
   searchParams: Promise<{ tab?: string; index?: string }>;
 }) {
   const params = await searchParams;
-  const tab = params.tab ?? "ip-proxy";
+  const tab = params.tab ?? "daily";
   const index = params.index ?? "0";
 
   const session = await auth();

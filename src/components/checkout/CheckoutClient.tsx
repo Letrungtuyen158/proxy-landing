@@ -126,7 +126,7 @@ export default function CheckoutClient({
 
       setOrder({
         id,
-        planLabel: formatPlanLabel(plan!.days),
+        planLabel: formatPlanLabel({ days: plan!.days, months: plan!.months }),
         planPrice: plan!.price,
         planUnit: "",
         amountUsdt: amountUsd,

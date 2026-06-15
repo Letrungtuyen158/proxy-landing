@@ -26,25 +26,65 @@ export const productColors = [
   "from-emerald-500 to-teal-600",
 ];
 
-export const PROXY_PLAN_TAB = "ip-proxy" as const;
-export type PricingTab = typeof PROXY_PLAN_TAB;
+export type PricingTab = "daily" | "monthly";
 
-export interface ProxyPlanItem {
+export const MONTHLY_BASE_USD = 200;
+export const DAILY_BASE_USD = 7;
+
+export interface DailyPlanItem {
   days: number;
-  price: string;
-  amount: string;
+  discount?: number;
   popular?: boolean;
-  save?: "save10" | "bestValue";
 }
 
-export const proxyPlans: ProxyPlanItem[] = [
-  { days: 1, price: "$3", amount: "$3" },
-  { days: 3, price: "$9", amount: "$9" },
-  { days: 7, price: "$20", amount: "$20", popular: true },
-  { days: 30, price: "$85", amount: "$85" },
+export interface MonthlyPlanItem {
+  months: number;
+  discount: number;
+  popular?: boolean;
+}
+
+export const dailyPlans: DailyPlanItem[] = [
+  { days: 1 },
+  { days: 7, popular: true },
+  { days: 15, discount: 5 },
+  { days: 30, discount: 10 },
 ];
 
-export function formatPlanLabel(days: number): string {
+export const monthlyPlans: MonthlyPlanItem[] = [
+  { months: 3, discount: 15, popular: true },
+  { months: 6, discount: 25 },
+  { months: 12, discount: 30 },
+];
+
+export function getDailyPrice(days: number, discount = 0) {
+  const original = days * DAILY_BASE_USD;
+  const final = original * (1 - discount / 100);
+  return {
+    original,
+    final,
+    originalLabel: `$${original}`,
+    finalLabel: `$${Math.round(final)}`,
+    amountLabel: `$${Math.round(final)}`,
+  };
+}
+
+export function getMonthlyPrice(months: number, discount: number) {
+  const original = months * MONTHLY_BASE_USD;
+  const final = original * (1 - discount / 100);
+  return {
+    original,
+    final,
+    originalLabel: `$${original}`,
+    finalLabel: `$${Math.round(final)}`,
+    amountLabel: `$${Math.round(final)}`,
+  };
+}
+
+export function formatPlanLabel(plan: { days?: number; months?: number }): string {
+  if (plan.months) {
+    return plan.months === 1 ? "1 Month IP Proxy" : `${plan.months} Months IP Proxy`;
+  }
+  const days = plan.days ?? 1;
   return days === 1 ? "1 Day IP Proxy" : `${days} Days IP Proxy`;
 }
 
@@ -55,20 +95,39 @@ export const pricingPlans: Record<
     price: string;
     unit: string;
     amount: string;
-    days: number;
+    days?: number;
+    months?: number;
+    discount?: number;
+    originalAmount?: string;
     popular?: boolean;
-    save?: "save10" | "bestValue";
   }>
 > = {
-  "ip-proxy": proxyPlans.map((plan) => ({
-    label: formatPlanLabel(plan.days),
-    price: plan.price,
-    unit: "",
-    amount: plan.amount,
-    days: plan.days,
-    popular: plan.popular,
-    save: plan.save,
-  })),
+  daily: dailyPlans.map((plan) => {
+    const pricing = getDailyPrice(plan.days, plan.discount ?? 0);
+    return {
+      label: formatPlanLabel({ days: plan.days }),
+      price: pricing.finalLabel,
+      unit: "",
+      amount: pricing.amountLabel,
+      days: plan.days,
+      discount: plan.discount,
+      originalAmount: plan.discount ? pricing.originalLabel : undefined,
+      popular: plan.popular,
+    };
+  }),
+  monthly: monthlyPlans.map((plan) => {
+    const pricing = getMonthlyPrice(plan.months, plan.discount);
+    return {
+      label: formatPlanLabel({ months: plan.months }),
+      price: pricing.finalLabel,
+      unit: "",
+      amount: pricing.amountLabel,
+      months: plan.months,
+      discount: plan.discount,
+      originalAmount: pricing.originalLabel,
+      popular: plan.popular,
+    };
+  }),
 };
 
 export const useCaseIcons = ["brain", "users", "trending", "search", "globe", "megaphone"] as const;

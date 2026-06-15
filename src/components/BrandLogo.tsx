@@ -4,8 +4,9 @@ import { brand } from "@/lib/brand";
 type BrandLogoProps = {
   size?: "sm" | "md" | "lg";
   showName?: boolean;
-  href?: string;
+  href?: string | null;
   className?: string;
+  variant?: "default" | "invoice";
 };
 
 const sizes = {
@@ -14,10 +15,15 @@ const sizes = {
   lg: { icon: 40, name: "text-xl", gap: "gap-3" },
 };
 
-function LogoMark({ size }: { size: number }) {
+function LogoMark({ size, variant = "default" }: { size: number; variant?: "default" | "invoice" }) {
+  const isInvoice = variant === "invoice";
   return (
     <div
-      className="relative flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-violet-600 to-purple-700 shadow-lg shadow-violet-500/20 ring-1 ring-white/10"
+      className={`relative flex shrink-0 items-center justify-center rounded-xl ring-1 ${
+        isInvoice
+          ? "bg-violet-600 ring-violet-500/30 [print-color-adjust:exact]"
+          : "bg-gradient-to-br from-indigo-500 via-violet-600 to-purple-700 shadow-lg shadow-violet-500/20 ring-white/10"
+      }`}
       style={{ width: size, height: size }}
     >
       <svg
@@ -50,12 +56,13 @@ export default function BrandLogo({
   showName = true,
   href = "/",
   className = "",
+  variant = "default",
 }: BrandLogoProps) {
   const s = sizes[size];
 
   const content = (
     <>
-      <LogoMark size={s.icon} />
+      <LogoMark size={s.icon} variant={variant} />
       {showName && (
         <span className={`font-semibold tracking-tight text-white ${s.name}`}>
           Velo

@@ -37,9 +37,28 @@
     "password": "$2b$12$mxkvPIlf.Cv.kWgcuMi6L.rP.ukykBqS01X6lftatbVtMGR6doMc6",
     "createdAt": "2026-06-13T19:41:58.373Z",
     "role": "user",
-    "planStatus": "pending",
-    "planLabel": "1 Day IP Proxy",
-    "planTab": "ip-proxy",
-    "planAmount": "$3"
+    "planStatus": "none",
+    "planLabel": null,
+    "planTab": null,
+    "planAmount": null,
+    "planActivatedAt": null
+  },
+  {
+    "id": "478a8136-b2af-49db-947b-1d5841f7a113",
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "$2b$12$xkBk1NFM39y7uH8gnZJF7u.Wt4p78xFl0ka93gZXslLU.AeMUj5re",
+    "createdAt": "2026-06-15T09:33:04.510Z",
+    "role": "admin",
+    "planStatus": "none"
+  },
+  {
+    "id": "041189fd-084b-4c9c-a7da-3371693a3216",
+    "name": "nezuko123",
+    "email": "if016dev@gmail.com",
+    "password": "$2b$12$cCEdLXdqP1QOzFllrveH9O701NuB./FbSr2zRUuevcZ8s5/1CYlnO",
+    "createdAt": "2026-06-15T09:34:56.026Z",
+    "role": "user",
+    "planStatus": "none"
   }
 ]

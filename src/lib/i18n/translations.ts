@@ -58,7 +58,7 @@ export const translations = {
             "Connect with n8n, MCP server, or LangChain – turn web data into live, intelligent workflows.",
         },
         {
-          title: "IP Proxy from $3/day",
+          title: "IP Proxy from $7/day",
           description:
             "No free trial — purchase a time-based IP proxy plan with unlimited bandwidth to use the platform.",
         },
@@ -74,7 +74,7 @@ export const translations = {
         okResponse: "200 OK — Structured JSON",
         residentialIps: "115M+ Residential IPs",
         noHiddenFees: "No hidden fees",
-        freeTrial: "IP Proxy — from $3/day",
+        freeTrial: "IP Proxy — from $7/day",
         freeTrialDesc: "Unlimited bandwidth · Purchase required to start",
       },
     },
@@ -125,10 +125,12 @@ export const translations = {
     pricing: {
       title: "IP Proxy Plans",
       subtitle:
-        "Time-based IP proxy access with unlimited bandwidth. Pick a duration and start instantly after payment.",
+        "Daily or monthly IP proxy access with unlimited bandwidth. Pick a plan and start after payment.",
+      tabs: { daily: "Daily", monthly: "Monthly" },
       popular: "Popular",
       mostPopular: "Most Popular",
       save10: "SAVE 10%",
+      savePercent: "SAVE {n}%",
       bestValue: "BEST VALUE",
       startTrial: "Buy plan",
       buyNow: "Buy now",
@@ -137,10 +139,15 @@ export const translations = {
       oneTime: "One-time payment",
       durationOne: "{n} Day",
       durationMany: "{n} Days",
+      monthOne: "{n} Month",
+      monthMany: "{n} Months",
       dayUnit: "day",
       daysUnit: "days",
+      monthUnit: "mo",
+      monthsUnit: "mos",
       total: "Total: {amount}",
       perDay: "~{price}/day",
+      perMonth: "~{price}/mo",
       allPlansInclude: "Every plan includes",
       includes: "Plan includes:",
       features: [
@@ -237,7 +244,7 @@ export const translations = {
       subtitle:
         "Seamlessly test, launch, and scale your data collection projects with reliable, easy-to-use, and affordable proxy infrastructure.",
       startNow: "View pricing",
-      note: "No free plan · IP proxy from $3/day, unlimited bandwidth",
+      note: "No free plan · IP proxy from $7/day, unlimited bandwidth",
     },
     footer: {
       tagline:
@@ -316,7 +323,7 @@ export const translations = {
         welcome: "Welcome back",
         subtitle: "Purchase a plan to activate proxy access and manage your usage",
         noPlanBanner: "You don't have an active plan yet",
-        noPlanDesc: "Buy an IP proxy plan (from $3/day, unlimited bandwidth) to activate access.",
+        noPlanDesc: "Buy an IP proxy plan (from $7/day, unlimited bandwidth) to activate access.",
         pendingPlanBanner: "Payment under review",
         pendingPlanDesc: "Your payment is being verified by admin. You'll get access once approved.",
         activePlanBanner: "Plan active",
@@ -396,6 +403,32 @@ export const translations = {
       approve: "Approve",
       reject: "Reject",
     },
+    bill: {
+      backDashboard: "Back to dashboard",
+      noBills: "No bills yet.",
+      statusPaid: "PAID",
+      statusUnpaid: "UNPAID",
+      invoicedTo: "Invoiced To",
+      payTo: "Pay To",
+      companyName: "VeloProxy OÜ",
+      companyAddress: "Sepapaja tn 6, Tallinn 15551, Estonia",
+      companyVat: "VAT: not VAT payer",
+      invoiceDate: "Invoice Date",
+      paymentMethod: "Payment Method",
+      invoiceItems: "Invoice Items",
+      description: "Description",
+      amount: "Amount",
+      subTotal: "Sub Total",
+      credit: "Credit",
+      total: "Total",
+      transactionDate: "Transaction Date",
+      gateway: "Gateway",
+      transactionId: "Transaction ID",
+      invoiceNo: "Invoice No",
+      print: "Print",
+      download: "Download",
+      period: "{plan} ({start} - {end})",
+    },
   },
   zh: {
     header: {
@@ -443,7 +476,7 @@ export const translations = {
           description: "对接 n8n、MCP 服务器或 LangChain — 将网络数据转化为智能工作流。",
         },
         {
-          title: "IP 代理 $3/天起",
+          title: "IP 代理 $7/天起",
           description: "无免费试用 — 购买按时长计费的 IP 代理套餐，流量不限，即可使用平台。",
         },
       ],
@@ -458,7 +491,7 @@ export const translations = {
         okResponse: "200 OK — 结构化 JSON",
         residentialIps: "1.15 亿+ 住宅 IP",
         noHiddenFees: "无隐藏费用",
-        freeTrial: "IP 代理 — $3/天起",
+        freeTrial: "IP 代理 — $7/天起",
         freeTrialDesc: "流量不限 · 需购买套餐后方可使用",
       },
     },
@@ -501,10 +534,12 @@ export const translations = {
     },
     pricing: {
       title: "IP 代理套餐",
-      subtitle: "按时长计费的 IP 代理，流量不限。选择时长，付款审核通过后即可使用。",
+      subtitle: "按天或按月计费的 IP 代理，流量不限。选择套餐，付款审核通过后即可使用。",
+      tabs: { daily: "按天套餐", monthly: "按月套餐" },
       popular: "热门",
       mostPopular: "最受欢迎",
       save10: "省 10%",
+      savePercent: "省 {n}%",
       bestValue: "最超值",
       startTrial: "购买套餐",
       buyNow: "立即购买",
@@ -513,10 +548,15 @@ export const translations = {
       oneTime: "一次性付款",
       durationOne: "{n} 天",
       durationMany: "{n} 天",
+      monthOne: "{n} 个月",
+      monthMany: "{n} 个月",
       dayUnit: "天",
       daysUnit: "天",
+      monthUnit: "月",
+      monthsUnit: "月",
       total: "合计：{amount}",
       perDay: "约 {price}/天",
+      perMonth: "约 {price}/月",
       allPlansInclude: "所有套餐均包含",
       includes: "套餐包含：",
       features: [
@@ -597,7 +637,7 @@ export const translations = {
       title: "开启您的代理与数据采集之旅",
       subtitle: "可靠、易用、实惠的代理基础设施，助您测试、启动并扩展数据采集项目。",
       startNow: "查看价格",
-      note: "无免费套餐 · IP 代理 $3/天起，流量不限",
+      note: "无免费套餐 · IP 代理 $7/天起，流量不限",
     },
     footer: {
       tagline: "面向开发者、数据团队与自动化工作流的 AI 就绪代理与采集基础设施。",
@@ -668,7 +708,7 @@ export const translations = {
         welcome: "欢迎回来",
         subtitle: "购买套餐以激活代理访问并管理您的用量",
         noPlanBanner: "您尚未激活任何套餐",
-        noPlanDesc: "购买 IP 代理套餐（$3/天起，流量不限）以激活访问。",
+        noPlanDesc: "购买 IP 代理套餐（$7/天起，流量不限）以激活访问。",
         pendingPlanBanner: "付款审核中",
         pendingPlanDesc: "您的付款正在由管理员审核，通过后即可使用。",
         activePlanBanner: "套餐已激活",
@@ -748,6 +788,32 @@ export const translations = {
       approve: "通过",
       reject: "拒绝",
     },
+    bill: {
+      backDashboard: "返回控制台",
+      noBills: "暂无账单。",
+      statusPaid: "已付款",
+      statusUnpaid: "未付款",
+      invoicedTo: "账单寄送至",
+      payTo: "收款方",
+      companyName: "VeloProxy OÜ",
+      companyAddress: "Sepapaja tn 6, Tallinn 15551, Estonia",
+      companyVat: "增值税：非增值税纳税人",
+      invoiceDate: "发票日期",
+      paymentMethod: "支付方式",
+      invoiceItems: "账单项目",
+      description: "描述",
+      amount: "金额",
+      subTotal: "小计",
+      credit: "抵扣",
+      total: "合计",
+      transactionDate: "交易日期",
+      gateway: "支付渠道",
+      transactionId: "交易编号",
+      invoiceNo: "发票号",
+      print: "打印",
+      download: "下载",
+      period: "{plan}（{start} - {end}）",
+    },
   },
 };
 
@@ -764,8 +830,8 @@ export function getAdminReply(message: string, locale: Locale): string {
     lower.includes("费用")
   ) {
     return isZh
-      ? "IP 代理套餐：1 天 $3、3 天 $9、7 天 $20、30 天 $85，流量不限。您可在价格页面直接购买。"
-      : "IP proxy plans: 1 day $3, 3 days $9, 7 days $20, 30 days $85 — unlimited bandwidth. Buy directly on the pricing page.";
+      ? "IP 代理套餐：按天 1天$7、7天$49、15天省5%($100)、30天省10%($189)；按月 3个月省15%($510)、6个月省25%($900)、12个月省30%($1680)。流量不限，可在价格页购买。"
+      : "IP proxy plans: Daily — 1d $7, 7d $49, 15d save 5% ($100), 30d save 10% ($189). Monthly — 3mo save 15% ($510), 6mo save 25% ($900), 12mo save 30% ($1680). Unlimited bandwidth.";
   }
 
   if (
@@ -775,8 +841,8 @@ export function getAdminReply(message: string, locale: Locale): string {
     lower.includes("免费")
   ) {
     return isZh
-      ? "我们暂无免费试用。请购买 IP 代理套餐（$3/天起，流量不限）即可开始。注册后在价格页面选择套餐。"
-      : "We don't offer a free trial. Purchase an IP proxy plan from $3/day with unlimited bandwidth. Create an account and choose a plan on the pricing page.";
+      ? "我们暂无免费试用。请购买 IP 代理套餐（$7/天起，流量不限）即可开始。注册后在价格页面选择套餐。"
+      : "We don't offer a free trial. Purchase an IP proxy plan from $7/day with unlimited bandwidth. Create an account and choose a plan on the pricing page.";
   }
 
   if (

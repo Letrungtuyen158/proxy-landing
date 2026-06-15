@@ -221,8 +221,8 @@
     "planUnit": "",
     "amountUsd": 3,
     "amountUsdt": 3,
-    "status": "pending",
+    "status": "rejected",
     "createdAt": "2026-06-13T19:47:41.040Z",
-    "updatedAt": "2026-06-13T19:47:41.040Z"
+    "updatedAt": "2026-06-15T09:33:35.801Z"
   }
 ]

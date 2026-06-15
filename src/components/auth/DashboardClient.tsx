@@ -197,6 +197,12 @@ export default function DashboardClient({ user, isAdmin }: DashboardClientProps)
                 {d.actions.docs}
               </Link>
               <Link
+                href="/bill"
+                className="rounded-xl border border-white/10 px-4 py-3 text-sm text-zinc-300 transition-colors hover:bg-white/5"
+              >
+                My bills
+              </Link>
+              <Link
                 href="/"
                 className="rounded-xl border border-white/10 px-4 py-3 text-sm text-zinc-300 transition-colors hover:bg-white/5"
               >
